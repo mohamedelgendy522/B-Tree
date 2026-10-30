@@ -61,10 +61,10 @@ struct BTree
             cout << "Empty Tree" << endl;
             return;
         }
-        for (int i = 0; i <= root->num_keys; i++) {
+        for (int i = 0; i < root->num_keys; i++) {
             cout << root->key[i] << " ";
         }
-        for (int i = 0; i < root->num_keys; i++) {
+        for (int i = 0; i <= root->num_keys; i++) {
             display(root->child[i]);
         }
     }
