@@ -55,9 +55,21 @@ struct BTree
         return nullptr;
     }
 
-    void display() {
-        // TODO
+    void display( Node<Type, Ord> * root) {  // Pre-order (node first, then children left to right)
+
+        if (root == nullptr) {
+            cout << "Empty Tree" << endl;
+            return;
+        }
+        for (int i = 0; i <= root->num_keys; i++) {
+            cout << root->key[i] << " ";
+        }
+        for (int i = 0; i < root->num_keys; i++) {
+            display(root->child[i]);
+        }
     }
+
+
 };
 
 int main() {
